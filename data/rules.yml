@@ -1,0 +1,43 @@
+version: "2.0"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: random_joke
+  steps:
+  - intent: random_joke
+  - action: action_random_joke
+
+- rule: inspiring_quote
+  steps:
+  - intent: inspiring_quote
+  - action: action_inspiring_quote
+
+- rule: Tell the time
+  steps:
+  - intent: inquire_time
+  - action: action_tell_time
+
+- rule: Tell the date
+  steps:
+  - intent: inquire_date
+  - action: action_tell_date
+
+- rule: Read the news
+  steps:
+  - intent: read_news
+  - action: action_read_news
+
+- rule: Turn on or off the appliances
+  steps:
+  - intent: change_status_appliances
+  - action: action_change_status_appliances

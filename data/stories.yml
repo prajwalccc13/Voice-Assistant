@@ -1,0 +1,63 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: random_joke
+  - action: action_random_joke
+
+- story: interactive_story_1
+  steps:
+  - intent: change_status_appliances
+    entities:
+    - status_change: turn on
+    - room: bedroom
+    - appliance: light
+  - action: action_change_status_appliances
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: change_status_appliances
+    entities:
+    - status_change: turn off
+    - room: bedroom
+    - appliance: light
+  - action: action_change_status_appliances
+  - intent: change_status_appliances
+    entities:
+    - status_change: turn off
+    - appliance: light
+    - room: bedroom
+  - action: action_change_status_appliances

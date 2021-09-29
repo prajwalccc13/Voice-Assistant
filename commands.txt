@@ -1,0 +1,8 @@
+
+# for running server at given endpoint
+rasa run -m models --endpoints endpoints.yml --port 5002 --credentials credentials.yml
+
+
+# Jokes Api
+https://v2.jokeapi.dev/
+http://api.icndb.com/jokes/random

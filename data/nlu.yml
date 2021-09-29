@@ -1,0 +1,150 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - Hello
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: random_joke
+  examples: |
+    - a joke
+    - tell me a joke
+    - say me a joke
+    - make me laugh
+    - i am sad
+    - i am very sad
+    - i want to laugh
+    - how about a joke
+    - jokes are us
+    - me gotta really good joke
+    - you got joke for me
+    - random joke
+    - give me a random joke
+    - how about a random joke
+    - a random joke
+- intent: inspiring_quote
+  examples: |
+    - inspiring quote
+    - inspiring joke
+    - give me a inspiring quote
+    - how about a inspiring quote
+    - a quote from inspiring
+    - give me a quote
+    - quote
+    - tell me a quote
+    - got a quote
+    - quotes are us
+- intent: inquire_time
+  examples: |
+    - what time is it?
+    - what is the time?
+    - time
+    - current time
+    - Is it afternoon?
+    - Is it still night?
+- intent: inquire_date
+  examples: |
+    - what date is it?
+    - what is the date?
+    - date
+    - current date
+    - Is it may?
+    - Is it january 2021?
+    - Is it still February?
+- intent: read_news
+  examples: |
+    - News
+    - Todays News
+    - What is happening in the world?
+    - Read me today's news
+    - Tell me the news
+    - IS everyting all right today
+    - Anything new in this world
+- intent: change_status_appliances
+  examples: |
+    - [Turn On](status_change) the [bedroom](room) [light](appliance)
+    - [Turn Off](status_change) the [kitchen](room) [fan](appliance)
+    - [Turn On](status_change) the [living room](room) [light](appliance)
+    - [Turn Off](status_change) the [washroom](room) [geyser](appliance)
+    - [turn on](status_change) the [bedroom](room) [light](appliance)
+    - [turn off](status_change) the [bedroom](room) [light](appliance)
+    - [turn off](status_change) the [light](appliance) of [bedroom](room)
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
