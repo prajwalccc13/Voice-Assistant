@@ -196,6 +196,8 @@ class ActionChangeStatusAppliances(Action):
             room_flag = False
             device_flag = False
 
+            url = "http://192.168.1.15:8000/"
+
             # Check if all data are provided
             if status_change and room and appliance:
                 validate_flag = True
@@ -222,7 +224,8 @@ class ActionChangeStatusAppliances(Action):
                 if status_change and room and appliance:
                     
                     # For Rooms
-                    rooms = requests.get('http://192.168.1.9:8000/api/room/').json()
+                    room_url = url + 'api/room/'
+                    rooms = requests.get(room_url).json()
                     if rooms:
                         for data in rooms:
                             # Check if provided room is added in database
@@ -244,7 +247,7 @@ class ActionChangeStatusAppliances(Action):
 
             # Fetch all devices
             if room_flag:
-                device_url = 'http://192.168.1.9:8000/api/room/' + str(room_id) + '/device/'
+                device_url = url + 'api/room/' + str(room_id) + '/device/'
                 device = requests.get(device_url).json()
 
                 if device:
@@ -258,10 +261,10 @@ class ActionChangeStatusAppliances(Action):
                                 if status_temp == data['status']:
                                     message = room + " " + appliance + " already turned on."
                                 else:
-                                    device_detail_url = 'http://192.168.1.9:8000/api/device/' + str(device_id) + '/'
+                                    device_detail_url = url + 'api/device/' + str(device_id) + '/'
                                     device_patch = requests.patch(device_detail_url, data ={
-                                        'status':'True',
-                                        'pin': data['pin']
+                                        'status': True,
+                                        'pin': int(data['pin'])
                                     })
                                     # message = "Turning on the " + room + " " + appliance
                                     if device_patch.status_code == 200:
@@ -272,10 +275,10 @@ class ActionChangeStatusAppliances(Action):
                                 if status_temp == data['status']:
                                     message = room + " " + appliance + " already turned off."
                                 else:
-                                    device_detail_url = 'http://192.168.1.9:8000/api/device/' + str(device_id) + '/'
+                                    device_detail_url = url + 'api/device/' + str(device_id) + '/'
                                     device_patch = requests.patch(device_detail_url, data ={
-                                        'status':'False',
-                                        'pin': data['pin']
+                                        'status': False,
+                                        'pin': int(data['pin'])
                                     })
                                     # message = "Turning on the " + room + " " + appliance
                                     if device_patch.status_code == 200:
