@@ -61,3 +61,31 @@ stories:
     - appliance: light
     - room: bedroom
   - action: action_change_status_appliances
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: change_status_appliances
+    entities:
+    - status_change: turn off
+    - room: kitchen
+    - appliance: bulb
+  - action: action_change_status_appliances
+  - intent: change_status_appliances
+    entities:
+    - status_change: turn on
+    - appliance: motor
+    - room: bedroom
+  - action: action_change_status_appliances
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: change_status_appliances
+    entities:
+    - status_change: turn on
+    - room: tv room
+    - appliance: tv
+  - action: action_change_status_appliances

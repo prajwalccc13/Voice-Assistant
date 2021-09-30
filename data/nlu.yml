@@ -141,7 +141,23 @@ nlu:
     - [Turn Off](status_change) the [washroom](room) [geyser](appliance)
     - [turn on](status_change) the [bedroom](room) [light](appliance)
     - [turn off](status_change) the [bedroom](room) [light](appliance)
+    - [turn on](status_change) the [sitting room](room) [bulb](appliance)
+    - [turn on](status_change) the [basement](room) [refrigerator](appliance)
+    - [turn off](status_change) the [entrance hall](room) [television](appliance)
+    - [turn off](status_change) the [pantry](room) [tubelight](appliance)
     - [turn off](status_change) the [light](appliance) of [bedroom](room)
+    - [turn on](status_change) the [tv](appliance) of [bedroom](room)
+    - [turn off](status_change) the [speaker](appliance) of [dining room](room)
+    - [turn on](status_change) the [cooler](appliance) of [family room](room)
+    - [turn off](status_change) the [ac](appliance) of [bedroom](room)
+    - [turn on](status_change) the [curtains](appliance) of [bedroom](room)
+    - [turn on](status_change) the [motor](appliance) of [laundry room](room)
+    - [turn off](status_change) the [kitchen](room) [bulb](appliance)
+    - [turn on](status_change) the [motor](appliance) of [bedroom](room)
+    - [turn on](status_change) the [television](appliance) of [entertainment room](room)
+    - [turn off](status_change) the [speaker](appliance) of [entertainment room](room)
+    - [turn off](status_change) the [tv](appliance) of [tv room](room)
+    - [turn on](status_change) the [tv room](room) [tv](appliance)
 - intent: bot_challenge
   examples: |
     - are you a bot?

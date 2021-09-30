@@ -17,7 +17,9 @@ while True:
     with sr.Microphone() as source:
         print("Say Hey Roger to start talking with chatbot: ")
         recognizer.adjust_for_ambient_noise(source)
-        audio = recognizer.listen(source)
+        recognizer.pause_threshold = 1
+        recognizer.energy_threshold = 4000
+        audio = recognizer.listen(source, phrase_time_limit=5)
         try:
             message = recognizer.recognize_google(audio).lower()
             print("You said : {}".format(message))
@@ -42,6 +44,8 @@ while True:
 
                 print("Speak Anything :")
                 recognizer.adjust_for_ambient_noise(source)
+                recognizer.pause_threshold = 1
+                recognizer.energy_threshold = 4000
                 audio = recognizer.listen(source)  
                 try:
                     message = recognizer.recognize_google(audio)  
